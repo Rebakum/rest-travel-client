@@ -1,27 +1,82 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { createContext, useState } from "react";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebaseConfig";
+import { GithubAuthProvider, GoogleAuthProvider, TwitterAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext(null);
-// const [currentUser, setCurrentUser] = useState()
+
+//-------social auth Provider----
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
+const twitterprovider = new TwitterAuthProvider();
 
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
+    const [currentUser, setCurrentUser] = useState(null);
+    const [loading, setLoading] = useState(true)
+    console.log(currentUser)
 
-const createUser =(email, password)=>{
-   return createUserWithEmailAndPassword(auth, email, password)
-}
+    //-------createUser------
+    const createUser = (email, password) => {
+        setLoading(true)
+        return createUserWithEmailAndPassword(auth, email, password)
+    };
 
- 
 
-    const allValue={
-        // currentUser,
-        createUser
+
+    //-----signIn-user--------
+
+    const signInUser = (email, password) => {
+        setLoading(true)
+        return signInWithEmailAndPassword(auth, email, password)
+    };
+    //------google login
+    const googleLogin = () => {
+        setLoading(true)
+        return signInWithPopup(auth, googleProvider)
+    }
+    //------github login
+    const githubLogin = () => {
+        return signInWithPopup(auth, githubProvider)
+    }
+    //------twitter login
+    const twitterLogin = () => {
+        setLoading(true)
+        return signInWithPopup(auth, twitterprovider)
+    }
+
+    //------logout-------
+    const logOut = () => {
+        setLoading(true)
+        return signOut(auth)
+    }
+
+
+    //----- observer----
+    useEffect(() => {
+        onAuthStateChanged(auth, (User) => {
+            setLoading(false)
+            setCurrentUser(User)
+
+        });
+
+
+    }, [loading])
+
+
+    const allValue = {
+        currentUser,
+        createUser,
+        signInUser,
+        googleLogin,
+        githubLogin,
+        twitterLogin,
+        logOut
     }
     return (
         <div>
             <AuthContext.Provider value={allValue}>
-        {           children}
+                {children}
             </AuthContext.Provider>
         </div>
     );

@@ -1,11 +1,49 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Travel02 from "../../assets/images/travel02.png"
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { useForm } from "react-hook-form"
+import SocialLogin from "./SocialLogin";
+import { toast } from "react-toastify";
+
+
 
 
 const LogIn = () => {
+    //navigation sistem
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state || '/';
+    const ridiract = () => {
+        navigate(from)
+    }
+    const { signInUser } = useContext(AuthContext);
+
+    const { register, handleSubmit, formState: { errors },
+    } = useForm()
+
+    const onSubmit = (data) => {
+        const { email, password } = data;
+
+
+        signInUser(email, password)
+            .then(result => {
+                toast.success('Yeah!! You are welcome')
+                if (result.user)
+                    setTimeout(ridiract, 1000)
+            })
+            .catch(error => {
+                console.log(error)
+                toast.warn('please check email')
+            })
+    }
+
+
+
+
     return (
         <div className="hero min-h-screen ">
-            <div className=" flex  justify-between items-center shadow-2xl gap-0 p-5">
+            <div className=" flex flex-col lg:flex-row  justify-between items-center shadow-2xl gap-0 p-5">
                 <div className="text-center lg:text-left flex-1">
 
                     <img className="" src={Travel02} alt="" />
@@ -15,18 +53,20 @@ const LogIn = () => {
 
                     <div className=" shrink-0 w-full h-full justify-center items-center flex-1 p-5">
 
-                        <form className="card-body w-full">
+                        <form onSubmit={handleSubmit(onSubmit)} className="card-body w-full">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" className="input input-bordered" required />
+                                <input type="email" placeholder="email" className="input input-bordered"{...register("email", { required: true })} />
+                                {errors.exampleRequired && <span>This field is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" className="input input-bordered" required />
+                                <input type="password" placeholder="password" className="input input-bordered" {...register("password", { required: true })} />
+                                {errors.exampleRequired && <span>This field is required</span>}
 
                             </div>
 
@@ -40,6 +80,7 @@ const LogIn = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
