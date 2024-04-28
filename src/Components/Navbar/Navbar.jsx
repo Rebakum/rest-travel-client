@@ -20,20 +20,19 @@ const Navbar = () => {
 
   const handleToggle = (e) => {
     if (e.target.checked) {
-      localStorage.setItem('theme','synthwave')
-      
+      setTheme('synthwave')
     }
     else {
-      localStorage.setItem('theme','light')
+      setTheme('light')
     }
     console.log(theme)
   }
   const navLinks =
     <>
       <li className="mr-2 text-lg font-bold"><NavLink to='/'>Home</NavLink></li>
-      <li className="mr-2 text-lg  font-bold"><NavLink to='/userProfile'>All Tourists Spot</NavLink></li>
-      <li className="mr-2 text-lg  font-bold"><NavLink to='/updateProfile'> Add Tourists Spot</NavLink></li>
-      <li className="mr-2 text-lg  font-bold"><NavLink to='/gallery'>My List</NavLink></li>
+      <li className="mr-2 text-lg  font-bold"><NavLink to='/allTorists'>All Tourists Spot</NavLink></li>
+      <li className="mr-2 text-lg  font-bold"><NavLink to='/addTouristsSport'> Add Tourists Spot</NavLink></li>
+      <li className="mr-2 text-lg  font-bold"><NavLink to='/myList'>My List</NavLink></li>
 
     </>
   return (
@@ -85,7 +84,7 @@ const Navbar = () => {
                   <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                       <div className="w-10 rounded-full" data-tooltip-id="my-tooltip">
-                        <img src={ currentUser?.photoURL || "https://i.ibb.co/y0yrnYQ/1681283571946.jpg"} />
+                        <img src={ currentUser?.photoURL || "https://as1.ftcdn.net/v2/jpg/06/17/13/26/1000_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.webp"} />
                       </div>
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">

@@ -46,7 +46,7 @@ const LogIn = () => {
             <div className=" flex flex-col lg:flex-row  justify-between items-center shadow-2xl gap-0 p-5">
                 <div className="text-center lg:text-left flex-1">
 
-                    <img className="" src={Travel02} alt="" />
+                    <img className="rounded-2xl" src={Travel02} alt="" />
                 </div>
                 <div>
                     <h1 className="text-4xl text-center font-bold">Login now!</h1>

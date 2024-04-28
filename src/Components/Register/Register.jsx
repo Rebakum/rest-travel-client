@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Travel01 from '../../assets/images/travel01.png';
 import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
@@ -8,6 +8,12 @@ import { toast } from 'react-toastify';
 
 
 const Register = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state || '/';
+    const ridiract = () => {
+        navigate(from)
+    }
     const passwordChecker = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()])/
     const { createUser } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -17,6 +23,7 @@ const Register = () => {
 
             createUser(email, password)
             .then(result=>{
+                setTimeout(ridiract, 1000)
                 console.log(result)
                 toast.success(' Yeah You have registered successfully ')
             })
