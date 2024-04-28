@@ -10,6 +10,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 const Navbar = () => {
   const [theme, setTheme] = useState()
   const { currentUser, logOut } = useContext(AuthContext)
+  console.log(currentUser)
 
 
   useEffect(() => {
