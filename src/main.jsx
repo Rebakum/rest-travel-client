@@ -15,6 +15,8 @@ import AuthProvider from './Components/AuthProvider/AuthProvider';
 import AddTouristsSport from './Components/AddTouristsSport/AddTouristsSport';
 import AllTourists from './Components/AllTourists/AllTourists';
 import MyList from './Components/MyList/MyList';
+import TouristsDetails from './Components/TouristsDetails/TouristsDetails';
+import UpdateTouristsList from './Components/UpdateTouristsList/UpdateTouristsList';
 
 
 
@@ -43,16 +45,27 @@ const router = createBrowserRouter([
       },
       {
         path:'/allTorists',
-        element:<AllTourists></AllTourists>
+        element:<AllTourists></AllTourists>,
+        loader: ()=>fetch('http://localhost:5000/addTouristsSport')
       },
       {
         path: '/addTouristsSport',
         element:<AddTouristsSport></AddTouristsSport>
       },
       {
+        path: '/details/:id',
+        element:<TouristsDetails></TouristsDetails>,
+        
+      },
+      {
         path: '/myList',
         element: <MyList></MyList>
 
+      },
+       {
+        path: '/updateList/:id',
+        element: <UpdateTouristsList></UpdateTouristsList>,
+        // loader:({params})=>fetch(`http://localhost:5000/myList/${params._id}`)
       }
 
     ]

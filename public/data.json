@@ -1,0 +1,87 @@
+
+[
+    {
+      "_id": "662e4e1b0d5e69fb283e53b4",
+      "image": " https://as2.ftcdn.net/v2/jpg/04/94/05/69/1000_F_494056979_PyeIPyJMSMtaggCxaKeeuqZAHfa3wygu.jpg",
+      "touristsName": "Bandorban",
+      "countryName": "Bangladesh",
+      "location": "Bandorban nil giri",
+      "description": " Bandarban is characterized by lush green hills, crystal-clear rivers, and diverse flora and fauna. It is one of the three hill districts of Bangladesh.",
+      "averageCost": " $50 per person",
+      "season": "winter",
+      "travelTime": "2days",
+      "totalVisitorsYear": "1980",
+      "name": "Ivory Massey",
+      "email": "susel@mailinator.com"
+    },
+    {
+      "_id": "662e503f0d5e69fb283e53b5",
+      "image": "https://images.pexels.com/photos/1929611/pexels-photo-1929611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "touristsName": "Bangkok",
+      "countryName": "Thailand",
+      "location": "Bangkok Metropolitan Region",
+      "description": "Immerse yourself in the vibrant culture and bustling street life of Thailand's capital city",
+      "averageCost": " $80 per person",
+      "season": "summer",
+      "travelTime": "4days",
+      "totalVisitorsYear": "2014",
+      "name": "raihan",
+      "email": "raiha@gmail.com"
+    },
+    {
+      "_id": "662e511f0d5e69fb283e53b6",
+      "image": "https://images.pexels.com/photos/931018/pexels-photo-931018.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "touristsName": "Bali",
+      "countryName": "Indonesia",
+      "location": "Bali Province",
+      "description": "Relax on Bali's beautiful beaches, explore ancient temples, and experience its vibrant culture and nightlife.",
+      "averageCost": "$120 per person",
+      "season": "spring",
+      "travelTime": "3days",
+      "totalVisitorsYear": "1987",
+      "name": "Jemima Davenport",
+      "email": "famig@mailinator.com"
+    },
+    {
+      "_id": "662e522b0d5e69fb283e53b7",
+      "image": "https://images.unsplash.com/photo-1508062878650-88b52897f298?q=80&w=1440&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "touristsName": " Kuala Lumpur",
+      "countryName": "Malaysia",
+      "location": "Kedah",
+      "description": "Relax on the beautiful beaches, explore mangrove forests, and enjoy outdoor adventures on the island of Langkawi.",
+      "averageCost": "$110 per person",
+      "season": "summer",
+      "travelTime": "2days",
+      "totalVisitorsYear": "",
+      "name": "gabkha",
+      "email": "gabkha@gmail.com"
+    },
+    {
+      "_id": "662e52de0d5e69fb283e53b8",
+      "image": "https://images.unsplash.com/photo-1581552450997-c2f700ab87e7?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "touristsName": "Ha Long Bay",
+      "countryName": "Vietnam",
+      "location": "Quang Ninh Province",
+      "description": "Sail through the stunning limestone karsts of Ha Long Bay and explore its hidden c",
+      "averageCost": " $120 per person",
+      "season": "autam",
+      "travelTime": "2days",
+      "totalVisitorsYear": "",
+      "name": "hanna",
+      "email": "hanna@gmail.com"
+    },
+    {
+      "_id": "662e53f50d5e69fb283e53b9",
+      "image": "https://images.unsplash.com/photo-1704419296703-00fb1e30959a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "touristsName": " Angkor Wat",
+      "countryName": "Cambodia",
+      "location": " Angkor Wat",
+      "description": "Angkor Wat is a Hindu-Buddhist temple complex in Cambodia.",
+      "averageCost": "100% per parson",
+      "season": "lateAutam",
+      "travelTime": "3days",
+      "totalVisitorsYear": "1993",
+      "name": "homana",
+      "email": "homana@gmail.com"
+    }
+  ]

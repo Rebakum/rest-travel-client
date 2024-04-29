@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Root = () => {
     return (
-        <div>
+        <div className="poppins">
             <Navbar></Navbar>
            
             <div className="mt-[70px]">

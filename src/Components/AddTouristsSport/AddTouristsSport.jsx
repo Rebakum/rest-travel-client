@@ -49,7 +49,7 @@ const AddTouristsSport = () => {
                         title: 'success!',
                         text: 'Added successfull Continue',
                         icon: 'success',
-                        confirmButtonText: 'Cool'
+                        confirmButtonText: 'Okey'
                     })
                 }
             })

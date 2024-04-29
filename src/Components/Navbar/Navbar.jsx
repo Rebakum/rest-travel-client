@@ -4,13 +4,13 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/images/travel-logo.jpg';
 import { Tooltip } from 'react-tooltip';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Typewriter } from 'react-simple-typewriter';
 
 
 
 const Navbar = () => {
   const [theme, setTheme] = useState()
   const { currentUser, logOut } = useContext(AuthContext)
-  console.log(currentUser)
 
 
   useEffect(() => {
@@ -51,8 +51,18 @@ const Navbar = () => {
 
           <img className='w-16 hidden lg:block rounded-full' src={logo} alt="" />
 
-          <a className="btn btn-ghost text-2xl text-primary hidden lg:block font-bold">REST<span className='text-secondary'
-          >TREVEL</span></a>
+          <a className="btn btn-ghost text-2xl text-primary hidden lg:block font-bold ">
+          <Typewriter
+              words={['REST TRAVEL']}
+              loop={5}
+              cursor
+              cursorStyle='_'
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+
+            />
+          </a>
 
         </div>
         <div className="navbar-center hidden lg:flex">
