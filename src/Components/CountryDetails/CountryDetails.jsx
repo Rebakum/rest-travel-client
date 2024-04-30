@@ -39,7 +39,7 @@ const CountryDetails = () => {
 
 
 
-            <div className="card w-96 bg-blue-100 shadow-2xl mx-10 my-20 border border-primary hover:border-secondary">
+            <div className="card w-96 bg-blue-100 shadow-2xl mx-10 my-20  gap-5 border border-primary hover:border-secondary">
                 <div className="card-body space-y-5 text-blue-950">
                     <h2 className="card-title text-6xl rancho">{countryName}</h2>
                     <p className="poppins text-2xl">{touristsName}</p>
