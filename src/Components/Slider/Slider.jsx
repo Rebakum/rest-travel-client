@@ -24,38 +24,49 @@ const Slider = () => {
                 className="mySwiper"
                 loop={true}>
                 <SwiperSlide
-                ><div className=" Slider slider1">
-                        <h1>COX S BAZAR</h1>
+                ><div className=" Slider slider1 flex flex-col justify-center items-center">
+                        <h1 className="text-5xl rancho text-secondary">COX S BAZAR</h1>
+                        <p className="text-poppins text-secondary">Immerse yourself in the vibrant culture and bustling street life of Thailand's capital city</p>
                        
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="Slider slider2">
-                        <h1>BANGKOK</h1>
+                    <div className="Slider slider2  flex flex-col justify-center items-center  ">
+                        <h1 className="text-5xl rancho text-secondary">BANGKOK</h1>
+                        <p className="text-poppins text-secondary">Immerse yourself in the vibrant culture and bustling street life of Thailand's capital city</p>
+
                        
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="Slider slider3">
-                        <h1>BALI</h1>
+                    <div className="Slider slider3 flex flex-col justify-center items-center">
+                        <h1 className="text-5xl rancho text-secondary">BALI</h1>
+                        <p className="text-poppins text-secondary">Immerse yourself in the vibrant culture and bustling street life of Thailand's capital city</p>
+
                         
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="Slider slider4">
-                        <h1>KULALAMPUR</h1>
+                    <div className="Slider slider4 flex flex-col justify-center items-center">
+                        <h1 className="text-5xl rancho text-secondary">KULALAMPUR</h1>
+                        <p className="text-poppins text-secondary">Immerse yourself in the vibrant culture and bustling street life of Thailand's capital city</p>
+
                        
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="Slider slider5">
-                        <h1>HA LONG BAY</h1>
+                    <div className="Slider slider5 flex flex-col justify-center items-center">
+                        <h1 className="text-5xl rancho text-secondary">HA LONG BAY</h1>
+                        <p className="text-poppins text-secondary">Immerse yourself in the vibrant culture and bustling street life of Thailand's capital city</p>
+
                         
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                     <div className="Slider slider6">
-                    <h1>ANGKOR WAT</h1>
+                     <div className="Slider slider6 flex flex-col justify-center items-center">
+                    <h1 className="text-5xl rancho text-secondary">ANGKOR WAT</h1>
+                    <p className="text-poppins text-secondary">Immerse yourself in the vibrant culture and bustling street life of Thailand's capital city</p>
+
                     
                 </div>
                 </SwiperSlide>

@@ -12,11 +12,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 const Root = () => {
 const currentUser =useContext(AuthContext)
     return (
-        // {
-        //     currentUser?
-
-        //     : loader
-        // }
+        
             <div className="poppins">
             <Navbar></Navbar>
             <div className="mt-[70px]">

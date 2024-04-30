@@ -16,15 +16,14 @@
 
 }
 
-.Slider h1 {
-    top: 10%;
+.Slider h1  {
+    /* top: 10%;
     right: 10%;
     position: absolute;
-    width: 200px;
-    height: 50px;
+   
     background: transparent;
     color: red;
-    text-align: center;
+    text-align: center; */
 }
 
 .slider1 {

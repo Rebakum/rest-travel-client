@@ -10,7 +10,7 @@ const CountryDetails = () => {
 
 
     useEffect(() => {
-        fetch(`https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/country/${locate.state}`)
+        fetch(`https://rest-travel.vercel.app/country/${locate.state}`)
             .then(res => res.json())
             .then(data => {
                 setCounTryData(data)
@@ -24,24 +24,21 @@ const CountryDetails = () => {
         description,
         averageCost,
         season,
-        travelTime,
+       
 
     } = CountryData;
     console.log(CountryData)
 
 
-    // if (!CountryData) {
-    //     <div>
-    //         LOading
-    //     </div>
-
-    // }
-
+   
 
 
     return (
 
         <div>
+
+
+
             <div className="card w-96 bg-blue-100 shadow-2xl mx-10 my-20 border border-primary hover:border-secondary">
                 <div className="card-body space-y-5 text-blue-950">
                     <h2 className="card-title text-6xl rancho">{countryName}</h2>

@@ -8,7 +8,7 @@ const UpdateTouristsList = () => {
     const [data, setData] = useState([])
     const locate = useLocation()
     useEffect(() => {
-        fetch(`https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/addTouristsSport/${locate.state}`)
+        fetch(`https://rest-travel.vercel.app/addTouristsSport/${locate.state}`)
             .then(res => res.json())
             .then(data => {
                 setData(data)

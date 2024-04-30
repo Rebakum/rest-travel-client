@@ -12,7 +12,9 @@ const ProtectedRoute = ({ children }) => {
 
     return (
         <div>
+            
             {currentUser ?<> {children}</>
+            
              :
                 <Navigate state={location.pathname} to={`/login`} replace />
 

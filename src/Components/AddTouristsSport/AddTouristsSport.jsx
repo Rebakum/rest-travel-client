@@ -34,7 +34,7 @@ const AddTouristsSport = () => {
 
         //-----send data to the server--
 
-        fetch('https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/addTouristsSport', {
+        fetch('https://rest-travel.vercel.app/addTouristsSport', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

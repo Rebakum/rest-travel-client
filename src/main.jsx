@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: ()=>fetch('https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/addTouristsSport')
+        loader: ()=>fetch('https://rest-travel.vercel.app/addTouristsSport')
 
       },
 
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
       {
         path:'/allTorists',
         element:<AllTourists></AllTourists>,
-        loader: ()=>fetch('https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/addTouristsSport')
+        loader: ()=>fetch('https://rest-travel.vercel.app/addTouristsSport')
       },
 
       {
@@ -91,7 +91,7 @@ const router = createBrowserRouter([
       {
         path: '/allCountry',
         element:<AllCountry></AllCountry>,
-        loader: ()=>fetch('https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/country')
+        loader: ()=>fetch('https://rest-travel.vercel.app/country')
       },
 
       {

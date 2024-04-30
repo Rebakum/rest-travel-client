@@ -15,7 +15,7 @@ const MyList = () => {
     useEffect(() => {
         if (currentUser?.email) {
 
-            fetch(`https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/myList/${currentUser?.email}`)
+            fetch(`https://rest-travel.vercel.app/myList/${currentUser?.email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

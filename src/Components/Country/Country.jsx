@@ -30,7 +30,7 @@ const Country = () => {
             email
         };
         console.log(createData);
-        fetch('https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/country', {
+        fetch('https://rest-travel.vercel.app/country', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
