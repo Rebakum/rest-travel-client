@@ -6,7 +6,7 @@ const TouristsDetails = () => {
     const [touristData, setTouristData] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/addTouristsSport/${location.state}`)
+        fetch(`https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/addTouristsSport/${location.state}`)
             .then(res => res.json())
             .then(data => {
                 setTouristData(data);
@@ -17,17 +17,7 @@ const TouristsDetails = () => {
     },
         [location.state]);
 
-    // const { _id, image,
-    //     touristsName,
-    //     countryName,
-    //     location,
-    //     description,
-    //     averageCost,
-    //     season,
-    //     travelTime,
-    //     totalVisitorsYear,
-    //     name,
-    //     email } = data;
+
 
     return (
         <div>
@@ -36,8 +26,8 @@ const TouristsDetails = () => {
                     <figure><img src={touristData.image} /></figure>
                     <div className="card-body justify-center items-center ">
                         <div className="flex  gap-3">
-                            <h2 className="card-title text-3xl">#{touristData.touristsName},</h2>
-                            <h2 className="card-title text-3xl">{touristData.countryName}#</h2>
+                            <h2 className="card-title rancho text-3xl">#{touristData.touristsName},</h2>
+                            <h2 className="card-title rancho text-3xl">{touristData.countryName}#</h2>
                         </div>
 
                         <p className="text-lg">{touristData.description}</p>

@@ -17,6 +17,11 @@ import AllTourists from './Components/AllTourists/AllTourists';
 import MyList from './Components/MyList/MyList';
 import TouristsDetails from './Components/TouristsDetails/TouristsDetails';
 import UpdateTouristsList from './Components/UpdateTouristsList/UpdateTouristsList';
+import CountryData from './Components/CountryData/CountryData';
+import Country from './Components/Country/Country';
+import AllCountry from './Components/AllCountry/AllCountry';
+import CountryDetails from './Components/CountryDetails/CountryDetails';
+import ProtectedRoute from './Components/ProtectedRouted/ProtectedRoute';
 
 
 
@@ -32,41 +37,74 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: ()=>fetch('http://localhost:5000/addTouristsSport')
+        loader: ()=>fetch('https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/addTouristsSport')
 
       },
+
       {
         path: '/login',
         element: <LogIn></LogIn>
       },
+
       {
         path: '/register',
         element: <Register></Register>
       },
+
       {
         path:'/allTorists',
         element:<AllTourists></AllTourists>,
-        loader: ()=>fetch('http://localhost:5000/addTouristsSport')
+        loader: ()=>fetch('https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/addTouristsSport')
       },
+
       {
         path: '/addTouristsSport',
-        element:<AddTouristsSport></AddTouristsSport>
+        element:(<ProtectedRoute>
+          <AddTouristsSport></AddTouristsSport>
+        </ProtectedRoute>)
       },
+
       {
         path: '/details/:id',
         element:<TouristsDetails></TouristsDetails>,
         
       },
+
       {
         path: '/myList',
-        element: <MyList></MyList>
+        element:(<ProtectedRoute>
+           <MyList></MyList>
+        </ProtectedRoute>)
 
       },
+
        {
         path: '/updateList/:id',
         element: <UpdateTouristsList></UpdateTouristsList>,
-        // loader:({params})=>fetch(`http://localhost:5000/myList/${params._id}`)
-      }
+        
+      },
+
+      {
+        path:'/country',
+        element:<Country></Country>
+      },
+      {
+        path: '/allCountry',
+        element:<AllCountry></AllCountry>,
+        loader: ()=>fetch('https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/country')
+      },
+
+      {
+        path:'/countryData',
+        element:<CountryData></CountryData>
+
+      }, 
+      {
+        path: '/countryDetails',
+        element:<CountryDetails></CountryDetails>,
+       
+      },
+     
 
     ]
   },

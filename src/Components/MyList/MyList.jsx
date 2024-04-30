@@ -9,12 +9,13 @@ import Swal from "sweetalert2";
 const MyList = () => {
     const { currentUser } = useContext(AuthContext);
     const [userTouristSpots, setUserTouristSpots] = useState([]);
+    const [refetch, setREfetch] = useState(null)
 
     console.log(currentUser?.email)
     useEffect(() => {
         if (currentUser?.email) {
 
-            fetch(`http://localhost:5000/myList/${currentUser?.email}`)
+            fetch(`https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/myList/${currentUser?.email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
@@ -23,7 +24,7 @@ const MyList = () => {
 
                 })
         }
-    }, [currentUser]);
+    }, [currentUser, refetch]);
 
     console.log(userTouristSpots)
 
@@ -37,24 +38,35 @@ const MyList = () => {
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
         })
-       
-        fetch(`http://localhost:5000/addTouristsSport/${id}`, {
-            method: 'DELETE'
-        }
-        )
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                // window.location.reload()
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
-                    
-                }
-            )
 
-            })
+            .then((result) => {
+                if (result.isConfirmed) {
+
+                    fetch(`http://localhost:5000/addTouristsSport/${id}`, {
+                        method: "DELETE"
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data);
+                            if (data.deletedCount > 0) {
+                                setREfetch(Date.now())
+                                Swal.fire({
+                                    title: "Deleted!",
+                                    text: "Your file has been deleted.",
+                                    icon: "success"
+
+                                }
+                                );
+                                const remaining = userTouristSpots.filter(user => user._id !== id);
+                                setUserTouristSpots(remaining)
+
+                            }
+                        })
+                }
+            });
+
+
+        
 
     }
     return (

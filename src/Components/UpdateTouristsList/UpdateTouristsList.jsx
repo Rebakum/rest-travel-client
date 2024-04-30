@@ -8,7 +8,7 @@ const UpdateTouristsList = () => {
     const [data, setData] = useState([])
     const locate = useLocation()
     useEffect(() => {
-        fetch(`http://localhost:5000/addTouristsSport/${locate.state}`)
+        fetch(`https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/addTouristsSport/${locate.state}`)
             .then(res => res.json())
             .then(data => {
                 setData(data)
@@ -94,7 +94,7 @@ const UpdateTouristsList = () => {
     return (
         <div>
             <div className="mx-10 p-10 bg-slate-200 rounded-2xl shadow-2xl">
-                <h1 className="text-xl text-center text-primary my-10">Add Tourists Sport</h1>
+                <h1 className="text-xl text-center text-primary my-10">Updared Tourists Sport</h1>
 
                 <div>
 

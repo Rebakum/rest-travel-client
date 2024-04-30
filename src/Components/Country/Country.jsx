@@ -1,8 +1,7 @@
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
-
-const AddTouristsSport = () => {
-    const handleAddTouristsSport = event => {
+const Country = () => {
+    const handladdCuntry = event => {
         event.preventDefault();
         const form = event.target;
         const image = form.image.value;
@@ -17,7 +16,7 @@ const AddTouristsSport = () => {
         const name = form.name.value;
         const email = form.email.value;
 
-        const newData = {
+        const createData = {
             image,
             touristsName,
             countryName,
@@ -30,43 +29,41 @@ const AddTouristsSport = () => {
             name,
             email
         };
-        console.log(newData);
-
-        //-----send data to the server--
-
-        fetch('https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/addTouristsSport', {
+        console.log(createData);
+        fetch('https://rest-travel-r4qd43gm2-rebekas-projects-68bf097b.vercel.app/country', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newData)
+            body: JSON.stringify(createData)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 if (data.insertedId) {
                     Swal.fire({
-                        title: 'success!',
-                        text: 'Added successfull Continue',
+                        title: 'Success!',
+                        text: 'Coffee added Successfully',
                         icon: 'success',
-                        confirmButtonText: 'Okey'
+                        confirmButtonText: 'okey'
                     })
                 }
             })
 
-
     }
+
+    //-----------data fetch------
 
 
 
 
     return (
-        <div className="mx-10 my-20 p-10 bg-blue-200 rounded-2xl poppins shadow-2xl">
-            <h1 className="text-5xl text-center text-primary my-5 rancho">Add Tourists Sport</h1>
+        <div className="mx-10 p-10 bg-slate-200 rounded-2xl shadow-2xl">
+            <h1 className="text-xl text-center text-primary my-10">Add Tourists Sport</h1>
 
             <div>
 
-                <form onSubmit={handleAddTouristsSport}>
+                <form onSubmit={handladdCuntry}>
                     {/* form-imageURL/Tourists spot name*/}
                     <div className="flex justify-center items-center gap-5">
                         <label className="form-control md:w-1/2 ">
@@ -162,22 +159,7 @@ const AddTouristsSport = () => {
                             <input type="text" id="year" name="totalVisitorsYear" placeholder="10000" className="input input-bordered w-full " />
                         </label>
                     </div>
-                    {/* form-UserName/Email */}
-                    <div className="flex justify-center items-center gap-5">
-                        <label className="form-control md:w-1/2 ">
-                            <label className="label">
-                                <span className="label-text-alt text-primary">UserName</span>
-                            </label>
-                            <input type="text" id="name" name="name" placeholder="UserName" className="input input-bordered w-full " />
-                        </label>
-                        <label className="form-control  md:w-1/2 ">
-                            <label className="label">
-                                <span className="label-text-alt text-primary">Email
-                                </span>
-                            </label>
-                            <input type="text" id="email" name="email" placeholder="Email" className="input input-bordered w-full " />
-                        </label>
-                    </div>
+
 
                     {/* form-button*/}
 
@@ -191,7 +173,8 @@ const AddTouristsSport = () => {
                 </form>
             </div>
         </div>
+
     );
 };
 
-export default AddTouristsSport;
+export default Country;
