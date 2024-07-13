@@ -71,6 +71,7 @@ const AuthProvider = ({ children }) => {
         googleLogin,
         githubLogin,
         twitterLogin,
+        loading,
         logOut
     }
     return (

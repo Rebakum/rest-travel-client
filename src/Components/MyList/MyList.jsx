@@ -42,7 +42,7 @@ const MyList = () => {
             .then((result) => {
                 if (result.isConfirmed) {
 
-                    fetch(`http://localhost:5000/addTouristsSport/${id}`, {
+                    fetch(`https://rest-travel.vercel.app/addTouristsSport/${id}`, {
                         method: "DELETE"
                     })
                         .then(res => res.json())

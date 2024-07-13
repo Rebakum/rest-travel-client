@@ -11,7 +11,7 @@ const AllCountry = () => {
     return (
         <div className="my-20 mx-10 poppins">
             <div className="my-20 mx-10 bg-blue-100 shadow-2xl flex justify-center items-center rounded-2xl p-10">
-            <h2 className="text-5xl text-center rancho">International tourism the most popular countries</h2>
+            <h2 className="text-5xl text-center text-blue-950 rancho">International tourism the most popular countries</h2>
             </div>
            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 p-5 justify-center items-center">
            {

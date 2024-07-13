@@ -16,8 +16,8 @@ const AllData = ({ data }) => {
 
     return (
 
-        <div className=" flex w-full lg:h-96 gap-5 lg:gap-10 bg-base-100  p-5 rounded-2xl shadow-2xl border flex-col lg:flex-row ">
-            <figure><img className="lg:w-80 h-full  p-5 rounded-2xl" src={image} /></figure>
+        <div className=" flex w-full  gap-5 lg:gap-10 bg-base-100  p-5 rounded-2xl shadow-2xl border flex-col  lg:flex-row ">
+            <figure className="rounded-2xl"><img className="lg:w-80 w-full rounded-2xl  h-80 p-5 " src={image} /></figure>
             <div className=" flex-1 *:my-2 ">
                 <h2 className=" text-2xl font-bold">{touristsName}</h2>
                 <p>{description}</p>
